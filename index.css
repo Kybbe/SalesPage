@@ -1,0 +1,273 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+}
+
+main {
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 20px;
+
+  height: 100vh;
+  background-color: rgb(216, 216, 216);
+  box-shadow: 0 20px 15px -15px rgba(216, 216, 216, 1);
+}
+
+.mainLeft {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.mainLeft h1 {
+  color: black;
+  font-size: 1.5em;
+}
+
+.mainLeft > * {
+  filter: 
+  drop-shadow(5px 4px 80px rgb(150, 150, 255))
+  drop-shadow(5px 4px 80px rgb(28, 229, 255))
+  drop-shadow(5px 8px 50px rgb(53, 255, 164))
+  drop-shadow(8px 8px 30px rgb(255, 220, 94))
+}
+
+.mainRight > .fakeIMG {
+  box-shadow: 40px 40px 10vw rgb(150, 150, 255),
+              -20px -20px 10vw rgb(28, 229, 255),
+              60px 0px 10vw rgb(255, 220, 94),
+              -60px 0px 10vw rgb(69, 255, 140)
+}
+
+.mainLeft, .mainRight {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.fakeIMG {
+
+  padding: 40px;
+  border-radius: 10px;
+  
+  background-color: #fff;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+article {
+  padding: 10px;
+}
+
+article h2 {
+  font-size: 1.5em;
+}
+
+.picLeft, .picRight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.textContainer {
+  width: 40vw;
+  padding: 30px;
+  text-align: center;
+}
+
+.picRight {
+  background-color: #34ADFF;
+  background-image: -webkit-linear-gradient(30deg, #34ADFF 45%, rgb(106, 106, 255) 45%);
+  padding-bottom: 150px;
+}
+
+.picRight .textContainer {
+  color: #fff;
+}
+
+.moveOverOther {
+  margin-top: -100px;
+}
+
+
+
+
+
+@media (min-width: 500px) {
+  main {
+    padding: 0 20vw;
+  }
+
+  .picRow {
+    flex-direction: unset !important;
+    flex-wrap: wrap;
+    height: 400px;
+    gap: 8px;
+  }
+}
+
+
+@media (min-width: 880px) {
+  main {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .mainLeft {
+    width: 40vw;
+  }
+  .mainRight {
+    width: 60vw;
+  }
+  .mainLeft, .mainRight {
+    padding: 20vw;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .mainLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    padding: 20px;
+  }
+  
+  .mainLeft p {
+    width: 30vw;
+    max-width: 270px;
+  }
+
+  .fakeIMG {
+    width: 20vw;
+    height: 20vw;
+  }
+  
+  .picLeft {
+    flex-direction: row;
+  }
+  
+  .picRight {
+    flex-direction: row-reverse;
+  }
+  
+  .picRow {
+    flex-direction: row !important;
+    height: 400px !important;
+  }
+}
+
+
+
+
+
+.fakeIMG {
+  max-width: 220px;
+  max-height: 220px;
+  margin: auto;
+  position: relative;
+  transition: transform 0.1s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.fakeIMG::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* Slight parallax effect on hover */
+.fakeIMG:hover * {
+  transform: translateZ(12px);
+}
+
+.fakeIMG * {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.picRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 920px;
+  overflow: hidden;
+}
+
+.picRow .img2 {
+  margin-top: 160px;
+}
+
+.picRow .img3 {
+  margin-top: 80px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: rgb(67, 73, 84);
+  padding: 40px;
+}
+
+footer a, footer p {
+  color: rgb(235, 235, 235);
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.4s ease;
+}
+
+footer a:hover {
+  color: rgb(187, 187, 187);
+  text-decoration: underline;
+}
+
+.diagonal-box {
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+  background: rgb(106, 106, 255);
+  color: white;
+  padding: 7rem 15%;
+}
+
+.diagonal-box .content * {
+  color: white;
+  font-size: large;
+  text-align: center;
+}
+
+.diagonal-box .content h1 {
+  font-size: 2.5em;
+}
+.diagonal-box .content h3 {
+  font-size: 1.5em;
+}
+.diagonal-box .content h4 {
+  font-size: 1.2em;
+}
